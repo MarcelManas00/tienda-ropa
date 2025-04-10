@@ -1,10 +1,8 @@
 <h1>{{ articulo?.titulo }}</h1>
 
 <div class="d-flex align-items-start gap-3 articulo-detalle">
-  <!-- Imagen -->
   <img [src]="articulo?.imagen" alt="{{ articulo?.titulo }}" class="img-fluid articulo-img" />
 
-  <!-- Contenido al lado de la imagen -->
   <div>
     <img [src]="articulo?.imagen" alt="{{ articulo?.titulo }}" class="img-fluid-reduc articulo-img" />
     <div *ngIf="articulo?.precioAnterior; else noOferta">

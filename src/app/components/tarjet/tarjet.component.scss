@@ -1,8 +1,7 @@
-/* En tu archivo SCSS */
+
 
 .row {
       
-    /* Espacio entre las tarjetas (banners) */
     .col-md-3 {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -11,10 +10,10 @@
   }
   
   .card-img-top {
-    /* Asegurando que todas las imágenes tengan el mismo tamaño */
-    width: 100%;           /* Hace que las imágenes llenen el ancho disponible */
-    height: 300px;         /* Establece una altura fija para todas las imágenes */
-    object-fit: cover;     /* Asegura que las imágenes se recorten correctamente sin distorsión */
+   
+    width: 100%;           
+    height: 300px;         
+    object-fit: cover;     
   }
 
   
