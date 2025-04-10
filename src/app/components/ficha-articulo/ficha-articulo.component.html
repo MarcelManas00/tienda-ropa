@@ -1,0 +1,17 @@
+<h1>{{ articulo?.titulo }}</h1>
+<img [src]="articulo?.imagen" alt="{{ articulo?.titulo }}" />
+<p>Precio: {{ articulo?.precio | currency:'EUR' }}</p>
+
+<div *ngIf="articulo?.precioAnterior; else noOferta">
+  <p><del>{{ articulo?.precioAnterior | currency:'EUR' }}</del></p>
+  <p style="color: red;">{{ articulo?.precio | currency:'EUR' }}</p>
+</div>
+<ng-template #noOferta>
+  <p>Precio normal: {{ articulo?.precio | currency:'EUR' }}</p>
+</ng-template>
+
+<ul>
+  <li *ngFor="let talla of articulo?.tallas">
+    {{ talla.talla }} - {{ talla.disponible ? 'Disponible' : 'No disponible' }}
+  </li>
+</ul>
