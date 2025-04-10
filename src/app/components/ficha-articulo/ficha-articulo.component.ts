@@ -8,6 +8,7 @@ import { CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-ficha-articulo',
   templateUrl: './ficha-articulo.component.html',
+  styleUrls: ['./ficha-articulo.component.scss'],
   standalone: true,
   imports: [NgFor, NgIf, CurrencyPipe]
 })

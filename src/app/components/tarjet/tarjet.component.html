@@ -1,5 +1,5 @@
-<div class="row">
-    <div *ngFor="let banner of banners" class="col-md-4">
+<div class="row d-flex justify-content-center">
+    <div *ngFor="let banner of banners" class="col-md-3">
       <div class="card">
         <img [src]="banner.image" class="card-img-top" alt="{{ banner.title }}">
         <div class="card-body">

@@ -5,6 +5,7 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-tarjetas',
   templateUrl: './tarjet.component.html',
+  styleUrls: ['./tarjet.component.scss'],
   standalone: true,
   imports: [NgFor]
 })

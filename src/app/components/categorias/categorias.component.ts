@@ -1,28 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { ArticulosComponent } from '../articulos/articulos.component';
+import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
+  styleUrls: ['./categorias.component.scss'],
   standalone: true,
-  imports: [ArticulosComponent]
+  imports: [NgFor, RouterLink]
 })
 export class CategoriasComponent implements OnInit {
-  categoriaId: string | null = null;
-  articulos: any[] = [];
+  categorias: any[] = [];
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.categoriaId = params.get('id');
-      if (this.categoriaId) {
-        this.apiService.getArticulosPorCategoria(this.categoriaId).subscribe((data) => {
-          this.articulos = data;
-        });
-      }
+    this.apiService.getCategorias().subscribe((data) => {
+      this.categorias = data;
     });
   }
 }

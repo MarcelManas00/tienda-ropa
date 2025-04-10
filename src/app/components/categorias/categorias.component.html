@@ -1,3 +1,14 @@
-<h1>Categoría {{ categoriaId }}</h1>
+<h2>Categorias</h2>
 
-<app-articulos [articulos]="articulos"></app-articulos>
+<div class="row d-flex justify-content-center">
+    <div *ngFor="let categoria of categorias" class="col-md-2">
+        <a routerLink="articulos" routerLinkActive="active" class="card-link">
+      <div class="card">
+        <img [src]="categoria.image" class="card-img-top" alt="{{ categoria.nombre }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ categoria.nombre }}</h5>
+        </div>
+      </div>
+        </a>
+    </div>
+</div>

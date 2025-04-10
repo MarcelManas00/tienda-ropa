@@ -1,1 +1,26 @@
-<p>articulos works!</p>
+<app-navbar></app-navbar>
+<h2>Artículos</h2>
+<div class="row d-flex justify-content-center">
+    <div *ngFor="let articulo of articulos" class="col-md-2">
+        <a [routerLink]="'/articulos/' + articulo.id" routerLinkActive="active" class="card-link">
+        <div class="card">
+            <img [src]="articulo.image" class="card-img-top" alt="{{ articulo.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ articulo.nombre }}</h5>
+                <div *ngIf="articulo.precioAnterior; else normalPrice">
+                    <del>{{ articulo.precioAnterior | currency:'EUR' }}</del>
+                    &nbsp;
+                    <span class="text-danger">{{ articulo.precio | currency:'EUR' }}</span>
+                </div>
+                <ng-template #normalPrice>
+                    <span>{{ articulo.precio | currency:'EUR' }}</span>
+                </ng-template>
+                <div class="mt-2">
+                    <i class="bi bi-heart-fill text-danger" *ngIf="articulo.favorito"></i>
+                    <i class="bi bi-heart" *ngIf="!articulo.favorito"></i>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+</div>
