@@ -19,9 +19,5 @@ export class CarouselComponent implements OnInit {
       this.images = data; console.log(this.images)
     });
   }
-
-  getImageUrl(filename: string): string {
-    return `http://localhost:3000/${filename}`;
-  }
   
 }
