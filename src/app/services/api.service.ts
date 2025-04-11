@@ -24,10 +24,6 @@ export class ApiService {
     return this.http.get<any[]>(`${this.apiUrl}/articulos`);
   }
 
-  getArticulosPorCategoria(categoriaId: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/articulos?categoria=${categoriaId}`);
-  }
-
   getArticulo(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/articulos/${id}`);
   }
